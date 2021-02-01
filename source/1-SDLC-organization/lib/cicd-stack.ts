@@ -105,8 +105,6 @@ export class AWSBootstrapKitLandingZonePipelineStack extends Stack {
       rolePolicyStatements: [
         new iam.PolicyStatement({
           actions: [
-            'organizations:ListAccounts',
-            'organizations:ListTagsForResource',
             'sts:AssumeRole'
           ],
           resources: ['arn:aws:iam::*:role/OrganizationAccountAccessRole'],
@@ -114,6 +112,7 @@ export class AWSBootstrapKitLandingZonePipelineStack extends Stack {
         new iam.PolicyStatement({
           actions: [
             'organizations:ListAccounts',
+            'organizations:ListTagsForResource'
           ],
           resources: ['*'],
         }),
